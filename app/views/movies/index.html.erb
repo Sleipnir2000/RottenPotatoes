@@ -2,7 +2,7 @@
 START app/views/movies/index.html.erb
 -->
 <h2>All Movies</h2>
-<table class="table" id="movies">
+<table class="table table-striped" id="movies">
     <thead>
         <tr>
             <th>Movie Title</th>
@@ -12,6 +12,14 @@ START app/views/movies/index.html.erb
         </tr>
     </thead>
     <tbody>
+        <% @movies.each do |movie|%>
+            <tr>
+                <td><%= movie.title %></td>
+                <td><%= movie.rating %></td>
+                <td><%= movie.released_date %></td>
+                <td><a href="<%= movie_path(movie.id) %>">More about</a></td>
+            <tr>
+        <% end %>
     </tbody>
 </table>
 <a class="btn btn-primary" href="<%= new_movies_path %>">Add new movie</a>
