@@ -19,8 +19,12 @@ class MoviesController < ApplicationController
             render :new, status: :unprocessable_entity
         end
     end
+
+    def show 
+        @movie = Movie.find(params[:id])
+    end
         
-    private 
+    private
     def movie_params 
         params.require(:movie).permit(:title, :rating, :released_date)
     end

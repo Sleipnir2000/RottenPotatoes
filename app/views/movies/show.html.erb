@@ -1,1 +1,10 @@
-<p>movies#show</p>
+<h2>Details about <em><%= @movie.title %></em></h2>
+<ul>
+<li>Rating: <%= @movie.rating %></li>
+<li>Released on: <%= @movie.released_date.strftime('%B %d, %Y') %></li>
+</ul>
+<div class="row">
+<a class="btn btn-primary col-2" href="<%= edit_movie_path(@movie.id) %>">Edit</a>
+<a class="btn btn-danger col-2" data-method="delete" data-confirm="Are you sure?" href="<%= movie_path(@movie.id) %>">Delete</a>
+<a class="btn btn-primary col-2" href="<%= movies_path%>">Back to movie list</a>
+<div class="row">
