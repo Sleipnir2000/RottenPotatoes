@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   root 'movies#index'
+
   get '/movies', to: 'movies#index', as: 'movies'
   get '/movies/new', to: 'movies#new', as: 'new_movies'
+  post '/movies', to: 'movies#create'
   get '/movie/:id', to: 'movies#show', as: 'movie'
 end
