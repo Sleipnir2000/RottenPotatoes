@@ -8,8 +8,8 @@ class MoviesController < ApplicationController
     end
 
     def create
-        @movie = Movie.create movie_params
-        if @movie
+        @movie = Movie.new movie_params
+        if @movie.save
             redirect_to movies_path
         else
             render :new, status: :unprocessable_entity
