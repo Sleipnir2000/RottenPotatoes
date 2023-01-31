@@ -23,6 +23,12 @@ class MoviesController < ApplicationController
     def show 
         @movie = Movie.find(params[:id])
     end
+
+    def destroy
+    end
+
+    def edit 
+    end
         
     private
     def movie_params 

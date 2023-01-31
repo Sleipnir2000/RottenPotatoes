@@ -5,6 +5,6 @@
 </ul>
 <div class="row">
 <a class="btn btn-primary col-2" href="<%= edit_movie_path(@movie.id) %>">Edit</a>
-<a class="btn btn-danger col-2" data-method="delete" data-confirm="Are you sure?" href="<%= movie_path(@movie.id) %>">Delete</a>
+<%= link_to 'Delete', movie_path(@movie.id), class: "btn btn-danger col-2", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
 <a class="btn btn-primary col-2" href="<%= movies_path%>">Back to movie list</a>
 <div class="row">
