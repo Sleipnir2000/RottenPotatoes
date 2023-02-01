@@ -11,5 +11,6 @@ Rails.application.routes.draw do
   post '/movies', to: 'movies#create'
   get '/movie/:id', to: 'movies#show', as: 'movie'
   get '/movie/:id/edit', to: 'movies#edit', as: 'edit_movie'
+  patch '/movie/:id', to: 'movies#update'
   delete '/movie/:id', to: 'movies#destroy'
 end

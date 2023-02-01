@@ -34,6 +34,16 @@ class MoviesController < ApplicationController
         @movie = Movie.find(params[:id])
     end
 
+    def update
+        @movie = Movie.find(params[:id])
+        if @movie.update(movie_params)
+            redirect_to movies_path, notice: "#{@movie.title} was successfully updated."
+        else
+            flash.now["warning"] = @movie.errors.first.full_message
+            render :edit, status: :unprocessable_entity
+        end
+    end
+
     private
     def movie_params 
         params.require(:movie).permit(:title, :rating, :released_date)
