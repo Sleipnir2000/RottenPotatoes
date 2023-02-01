@@ -1,0 +1,18 @@
+<!--
+    START app/view/movies/edit
+-->
+<h2>Edit Existing Movie</h2>
+<%= form_with model: @movie, class: "form" do |form| %>
+<%= form.label :title, class: "col-form-label" %>
+<%= form.text_field :title, class: "form-control" %>
+<%= form.label :rating, class: "col-form-label" %>
+<%= form.select :rating, ['G','PG','PG-13','R','NC-17'], { selected: 'PG' }, { class: "form-control col-1" } %>
+<%= form.label :released_date, "Released On", class: "col-form-label" %>
+<%= form.date_select :released_date, {}, { class: "form-control col-2 d-inline" } %>
+<br/>
+<%= form.submit 'Update Movie Info', class: "btn btn-primary" %>
+<a class="btn btn-secondary" href="<%= movie_path(@movie.id) %>" >Cancel</a>
+<% end %>
+<!--
+    END app/view/movies/edit
+-->
